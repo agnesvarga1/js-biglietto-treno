@@ -7,8 +7,29 @@
     <title>Biglietto treno</title>
   </head>
   <body>
-    <div class="inputs">
-      <input type="text" />
+    <div class="container">
+      <h1>Train Ticket Picker</h1>
+      <p class="err"></p>
+      <div class="inputs">
+        <label for="trip-km"
+          >How many kilometers would you like to travel?</label
+        >
+        <input
+          type="number"
+          name="kms"
+          id="trip-km"
+          placeholder="your trip in kms"
+        />
+        <label for="age-input">What is your age?</label>
+        <input
+          type="number"
+          name="age"
+          id="age-input"
+          placeholder="your age here"
+        />
+        <button id="buyTicketBtn">Get Ticket</button>
+      </div>
+      <div class="ticket"></div>
     </div>
     <script src="./main.js"></script>
   </body>
