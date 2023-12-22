@@ -25,14 +25,14 @@ buyTicketBtn.addEventListener("click", function () {
     displayKM.innerHTML = `Journey Length: ${ticketkms} KMs`;
     displayDisc.innerHTML = `Based on your age a 40% discount got applied`;
     displayTotalPrice.innerHTML = `Total price: ${ticketPrice} € `;
-  } else if (age <= 18) {
+  } else if (age <= 18 && age !== 0) {
     ticketPrice = ticketPrice - juniorDiscount;
     displayKM.innerHTML = `Journey Length: ${ticketkms} KMs`;
     displayDisc.innerHTML = `Based on your age a 20% discount got applied`;
     displayTotalPrice.innerHTML = `Total price: ${ticketPrice} € `;
   } else {
     displayKM.innerHTML = `Journey Length: ${ticketkms} KMs`;
-    displayDisc.innerHTML = `No discount applied based on your age`;
+    displayDisc.innerHTML = `No discount applied `;
     displayTotalPrice.innerHTML = `Total price: ${ticketPrice} € `;
   }
 });
