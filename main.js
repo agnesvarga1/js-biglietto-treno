@@ -12,21 +12,23 @@ buyTicketBtn.addEventListener("click", function () {
   ticketkms = Number(ticketkms.value);
   age = Number(age.value);
   console.log(ticketkms, age);
-  ticketPrice = Math.round(ticketkms * pricePerKm);
+  ticketPrice = ticketkms * pricePerKm;
+  ticketPrice = ticketPrice.toFixed(2);
   console.log("FullPrice:" + ticketPrice);
   let seniorDiscount = ticketPrice * 0.4;
-
   let juniorDiscount = ticketPrice * 0.2;
   console.log(seniorDiscount, juniorDiscount);
   if (ticketkms.value == 0 || !ticketkms) {
     errMsg.innerHTML = "Must fill km field and can not be 0";
   } else if (age >= 65) {
     ticketPrice = ticketPrice - seniorDiscount;
+    ticketPrice = ticketPrice.toFixed(2);
     displayKM.innerHTML = `Journey Length: ${ticketkms} KMs`;
     displayDisc.innerHTML = `Based on your age a 40% discount got applied`;
     displayTotalPrice.innerHTML = `Total price: ${ticketPrice} € `;
   } else if (age <= 18 && age !== 0) {
     ticketPrice = ticketPrice - juniorDiscount;
+    ticketPrice = ticketPrice.toFixed(2);
     displayKM.innerHTML = `Journey Length: ${ticketkms} KMs`;
     displayDisc.innerHTML = `Based on your age a 20% discount got applied`;
     displayTotalPrice.innerHTML = `Total price: ${ticketPrice} € `;
